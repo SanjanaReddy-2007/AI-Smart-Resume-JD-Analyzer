@@ -1,17 +1,72 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="col-md-5 mx-auto bg-white p-4 shadow rounded">
-<h2 class="text-center">Login</h2>
-<form method="POST">
-<div class="mb-3">
-<label>Email</label>
-<input type="email" name="email" class="form-control" required>
+
+<style>
+    body {
+        background: linear-gradient(135deg, #dfe9ff, #f8f9ff);
+        min-height: 100vh;
+    }
+    .auth-card {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 40px;
+        box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.08);
+        transition: 0.3s ease;
+    }
+    .auth-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0px 15px 45px rgba(0, 0, 0, 0.12);
+    }
+    .auth-title {
+        font-weight: 700;
+        color: #333;
+    }
+    .form-control {
+        border-radius: 12px;
+        padding: 12px 14px;
+        font-size: 15px;
+    }
+    .btn-modern {
+        background: linear-gradient(135deg, #4A90E2, #9013FE);
+        border: none;
+        color: white;
+        border-radius: 12px;
+        padding: 12px;
+        font-size: 17px;
+        font-weight: 600;
+    }
+    .btn-modern:hover {
+        opacity: 0.92;
+    }
+</style>
+
+<div class="col-md-5 mx-auto mt-5">
+    <div class="auth-card">
+
+        <h2 class="text-center mb-4 auth-title">Welcome Back</h2>
+
+        <form method="POST">
+            <div class="mb-3">
+                <label class="fw-semibold mb-1">Email Address</label>
+                <input type="email" name="email" class="form-control" placeholder="example@gmail.com" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="fw-semibold mb-1">Password</label>
+                <input type="password" name="password" class="form-control" placeholder="Enter your password" required>
+            </div>
+
+            <button type="submit" class="btn-modern w-100 mt-2">Login</button>
+
+            <div class="text-center mt-3">
+                <small class="text-muted">
+                    Don’t have an account?
+                    <a href="/register" class="text-decoration-none fw-semibold">Register</a>
+                </small>
+            </div>
+        </form>
+
+    </div>
 </div>
-<div class="mb-3">
-<label>Password</label>
-<input type="password" name="password" class="form-control" required>
-</div>
-<button type="submit" class="btn btn-dark w-100">Login</button>
-</form>
-</div>
+
 {% endblock %}
